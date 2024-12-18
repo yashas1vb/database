@@ -1,0 +1,179 @@
+Q1. What is RDBMS? Why do industries use RDBMS?
+Ans: RDBMS (Relational Database Management System):
+- A type of database management system that organizes data into tables (relations) composed of rows and columns.
+- Data is stored in a structured format, ensuring ease of access, update, and management.
+- Uses SQL (Structured Query Language) for querying and manipulating data.
+
+Why Industries Use RDBMS :
+1. Data Integrity: Enforces constraints like primary and foreign keys to ensure data consistency.
+2. Scalability: Handles large volumes of data efficiently.
+3. Flexibility: Supports complex queries and multiple user access.
+4. Security: Provides robust access controls and authentication mechanisms.
+5. Standardization: Industry-standard solutions make integration and development easier.
+6. Transactional Support: Guarantees data accuracy with ACID (Atomicity, Consistency, Isolation, Durability) properties.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Q2. Explain the Relationship Data Model in Depth
+Ans: Relational Data Model:
+- Represents data using tables (relations), where each table contains rows (records/tuples) and columns (attributes).
+- Relies on mathematical set theory and predicate logic.
+
+Key Components:
+1. Relation: A table with unique rows and named columns.
+2. Attributes: Columns in a table, representing properties of the entity.
+3. Tuple: A single row in the table, representing a record.
+4. Keys:
+   1. Primary Key: Uniquely identifies each tuple.
+   2. Foreign Key: Links one table to another.
+5. Domain: The set of permissible values for an attribute.
+6. Constraints:
+   1. Entity Integrity: Primary key cannot be null.
+   2. Referential Integrity: Foreign keys must reference valid primary keys.
+
+Advantages:
+- Easy to query and update using SQL.
+- Ensures data consistency and integrity.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q3. Importance of Relationships in DBMS and Types
+
+Ans: Importance:
+1. Data Consistency: Ensures relationships between entities remain valid.
+2. Efficient Data Retrieval: Allows complex queries involving multiple entities.
+3. Reduces Redundancy: Stores related data in separate tables, linking them via keys.
+
+Types of Relationships:
+1. One-to-One (1:1):
+   - One record in a table is linked to one record in another table.
+   - Example: A person can have only one passport.
+2. One-to-Many (1:N):
+   - One record in a table is linked to multiple records in another.
+   - Example: A customer can place many orders.
+3. Many-to-Many (M:N):
+   - Multiple records in one table are linked to multiple records in another.
+   - Example: Students can enroll in multiple courses, and each course has multiple students.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Q4. Types of Keys in RDBMS with Real-Life Scenario
+Ans: 
+1. Primary Key:
+   - Uniquely identifies each record in a table.
+   - Example: In a "Student" table, `StudentID` acts as the primary key.
+
+2. Candidate Key:
+   - Attributes that can uniquely identify a row, from which the primary key is chosen.
+   - Example: `Email` and `StudentID` are candidate keys for a student.
+
+3. Foreign Key:
+   - Links one table to another by referencing the primary key in the related table.
+   - Example: `OrderID` in the "Orders" table references `CustomerID` in the "Customers" table.
+
+4. Composite Key:
+   - A combination of attributes used to uniquely identify a record.
+   - Example: In a "Results" table, `StudentID` and `ExamID` together form a composite key.
+
+5. Alternate Key:
+   - Candidate keys not chosen as the primary key.
+   - Example: `Email` is an alternate key if `StudentID` is the primary key.
+
+6. Super Key:
+   - Any attribute or set of attributes that uniquely identify a row.
+   - Example: `{StudentID, Email}` is a super key.
+
+----------------------------------------------------------------------------------------------------------------------
+
+Q5. Short Note on Single Responsibility Principle (SRP)
+Ans: The Single Responsibility Principle (SRP) is one of the SOLID principles in software design. It states:
+
+- Every class, module, or function should have only one reason to change.
+- Each unit of code should be responsible for a single functionality or task.
+
+Example:
+- A `Customer` class should handle only customer-related operations. Payment processing should be handled by a separate `Payment` class.
+
+Advantages:
+- Improves code readability and maintainability.
+- Simplifies debugging and testing.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Q6. Types of Errors in a Denormalized Database
+Ans:
+1. Data Redundancy:
+   - Repeating data across tables leads to excessive storage usage.
+
+2. Update Anomalies:
+   - Multiple copies of the same data must be updated, increasing the risk of inconsistencies.
+
+3. Insertion Anomalies:
+   - Difficulty adding new records without including unnecessary data.
+   - Example: Cannot add a student without specifying a course.
+
+4. Deletion Anomalies:
+   - Deleting a record may unintentionally remove useful data.
+   - Example: Deleting the last order of a customer might remove their details.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Q7. What is Normalization and Why is it Needed?
+
+Ans: Normalization:
+- A process of organizing data in a database to reduce redundancy and improve integrity.
+- Breaks down large tables into smaller ones while maintaining relationships.
+
+Need for Normalization:
+1. Reduces Redundancy: Avoids duplicate data.
+2. Improves Consistency: Ensures data integrity.
+3. Simplifies Queries: Structured and optimized data retrieval.
+4. Enhances Scalability: Accommodates future changes without major redesign.
+
+----------------------------------------------------------------------------------------------------------------------------------
+Q8. Levels of Normalization
+
+1. First Normal Form (1NF):
+   - Ensures each cell contains a single value (atomicity).
+   - Eliminates duplicate rows.
+
+2. Second Normal Form (2NF):
+   - Achieved when 1NF is met, and all non-key attributes depend entirely on the primary key.
+
+3. Third Normal Form (3NF):
+   - Achieved when 2NF is met, and no transitive dependency exists.
+
+4. Boyce-Codd Normal Form (BCNF):
+   - A stricter version of 3NF where every determinant is a candidate key.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Q9. What are Joins and Why Do We Need Them?
+
+Ans: Joins:
+- Operations in SQL that combine data from two or more tables based on a related column.
+Need:
+1. Retrieve data spread across multiple tables.
+2. Establish meaningful relationships between datasets.
+3. Perform complex queries involving multiple entities.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Q10. Types of Joins
+Ans: 
+1. Inner Join:
+   - Returns rows with matching values in both tables.
+
+2. Left Join:
+   - Returns all rows from the left table and matching rows from the right table.
+
+3. Right Join:
+   - Returns all rows from the right table and matching rows from the left table.
+
+4. Full Outer Join:
+   - Combines results of both left and right joins, including unmatched rows.
+
+5. Self Join:
+   - A table joins itself.
+
+6. Cross Join:
+   - Produces a Cartesian product of two tables.
